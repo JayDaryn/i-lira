@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Modal from '../utils/Modal';
 
 function HeroHome() {
@@ -37,16 +38,16 @@ function HeroHome() {
               
               <div className=" max-w-xs mx-auto sm:max-w-none sm:flex sm:flex-wrap" data-aos="zoom-y-out" data-aos-delay="300">
                 <div>
-                  <a className="mt-5 btn rounded-full text-white bg-blue-600 hover:bg-blue-700 w-full sm:w-auto sm:mb-0" href="#0"> STAKE <svg className="w-3 h-3 fill-current text-white flex-shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                  <Link to="/signup" className="mt-5 btn rounded-full text-white bg-blue-600 hover:bg-blue-700 w-full sm:w-auto sm:mb-0" href="#0"> STAKE <svg className="w-3 h-3 fill-current text-white flex-shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
                     <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fillRule="nonzero" />
                   </svg> 
-                  </a>
+                  </Link>
                 </div>
                 <div>
-                  <a className="mt-5 btn rounded-full text-white bg-gray-900 hover:bg-gray-800 w-full sm:w-auto sm:ml-4" href="#0">BUY <svg className="w-3 h-3 fill-current text-white flex-shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                  <Link to="/signup" className="mt-5 btn rounded-full text-white bg-gray-900 hover:bg-gray-800 w-full sm:w-auto sm:ml-4" href="#0">BUY <svg className="w-3 h-3 fill-current text-white flex-shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
                     <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fillRule="nonzero" />
                   </svg> 
-                  </a>
+                  </Link>
                 </div>
                 <div>
                   
@@ -106,16 +107,20 @@ function HeroHome() {
           <div>
             <p className="text-white mt-8" data-aos="zoom-y-out" data-aos-delay="150">
             The Future Of Investing Is Here.
-            The tokenomics of the I-LIRA is similar to a certificate of deposit where collateralized funds held in frozen banks accounts are transferred in an escrow-style format  THROUGH E-LIRA CASH that allows for a conversion of frozen funds to be transferred into the form of an Binance Smart Chain blockchain token called the I-LIRA. I-LIRA works to provide a replacement option for those seeking to diversify their holdings into blockchain cryptocurrency and re-secure their assets in the form of I-LIRA. The E-LIRA is advantageous to the Lebanese people, and outside investors, because of it’s high interest staking platform options with the I-LIRA. It is estimated that 100 Billion dollars of funds are locked in Lebanese accounts, creating an opportunity for freedom, liberation, and financial independence through the tokenized E-LIRA transfer opportunity.
+            The tokenomics of the I-LIRA is similar to a certificate of deposit where collateralized funds held in frozen banks accounts are transferred in an escrow-style format  THROUGH E-LIRA NFT Collection that allows for a conversion of frozen funds to be transferred into the form of an Binance Smart Chain blockchain token called the I-LIRA. I-LIRA works to provide a replacement option for those seeking to diversify their holdings into blockchain cryptocurrency and re-secure their assets in the form of I-LIRA. The E-LIRA is advantageous to the Lebanese people, and outside investors, because of it’s high interest staking platform options with the I-LIRA. It is estimated that 100 Billion dollars of funds are locked in Lebanese accounts, creating an opportunity for freedom, liberation, and financial independence through the tokenized E-LIRA transfer opportunity.
             </p>
             
+          </div>
+          <div>
+            <a href="https://i-lira.notion.site/Why-Choose-I-LIRA-706fa108580e4f419d6aa0e12fcfe093" target="_blank" rel="noopener noreferrer" className="mt-5 btn rounded-full text-white bg-blue-600 hover:bg-blue-700 w-full sm:w-auto sm:mb-0" > Learn More
+            </a>
           </div>
         </div>
       </div>
  {/* Modal */}
       <Modal id="modal" ariaLabel="modal-headline" show={videoModalOpen} handleClose={() => setVideoModalOpen(false)}>
         <div className="relative pb-9/16">
-          <iframe className="absolute w-full h-full" src="https://player.vimeo.com/video/174002812" title="Video" allowFullScreen></iframe>
+          <iframe className="absolute w-full h-full" src="https://player.vimeo.com/video/252578815" title="Video" allowFullScreen></iframe>
         </div>
       </Modal>
     </section>

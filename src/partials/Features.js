@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Features() {
   
@@ -40,6 +41,10 @@ function Features() {
                 <p className="text-white mt-8" data-aos="zoom-y-out" data-aos-delay="150">
                 CDs, known as Certificates of Deposit or Time Deposits, are worth Trillions of dollars. CDs are worth more than gold, credit card companies, and cash.
                 </p>
+                <div>
+                  <a href="https://i-lira.notion.site/How-E-LIRA-NFT-Works-In-Lebanon-fe9e6c9a39654cf095d0b745f2cf00f7" target="_blank" rel="noopener noreferrer" className="mt-5 btn rounded-full text-white bg-blue-600 hover:bg-blue-700 w-full sm:w-auto sm:mb-0" > Learn More
+                  </a>
+                </div>
                 
               </div>
             </div>
@@ -59,6 +64,10 @@ function Features() {
                 <p className="text-white mt-8" data-aos="zoom-y-out" data-aos-delay="150">
                 I-LIRA is the first cryptocurrency in the world with a chart of its future locked supply. You can see when big stakes are set to expire in the future and plan around them.
                 </p>
+                <div>
+                  <Link to="/signup" className="mt-5 btn rounded-full text-white bg-blue-600 hover:bg-blue-700 w-full sm:w-auto sm:mb-0" > Visit Dashboard
+                  </Link>
+                </div>
                 
               </div>
             </div>
@@ -76,7 +85,10 @@ function Features() {
             <p className="text-white mt-8" data-aos="zoom-y-out" data-aos-delay="150">
             Use advanced analytical tools. Clear TradingView charts let you track current and historical profit investments.
             </p>
-            
+            <div>
+                  <a href="https://i-lira.notion.site/Trading-I-LIRA-1c47b646b72e479b9b6c1e2d205572f5" target="_blank" rel="noopener noreferrer" className="mt-5 btn rounded-full text-white bg-blue-600 hover:bg-blue-700 w-full sm:w-auto sm:mb-0" > Learn More
+                  </a>
+            </div>
           </div>
         </div>
 
@@ -96,7 +108,10 @@ function Features() {
             <p className="text-white mt-8" data-aos="zoom-y-out" data-aos-delay="150">
             I-LIRA Pays stakers instead of miners. Staking I-LIRA is like getting free mining hardware and electricity.Some users try mining to make more cryptocurrency. Instead of sending your money to a foreign mega-corp to buy mining equipment which shows up late, used, or never at all, you can skip the depreciating asset and electricity bills and just stake your coins.
             </p>
-            
+            <div>
+                  <a href="https://i-lira.notion.site/How-It-Works-Why-b6d979f0b2e0439cb41afa39ceeafebf" target="_blank" rel="noopener noreferrer" className="mt-5 btn rounded-full text-white bg-blue-600 hover:bg-blue-700 w-full sm:w-auto sm:mb-0" > Learn More
+                  </a>
+            </div>
           </div>
         </div>
         <div className="p-5 lg:p-20 flex-1">
