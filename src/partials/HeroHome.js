@@ -5,6 +5,12 @@ import Modal from '../utils/Modal';
 function HeroHome() {
 
   const [videoModalOpen, setVideoModalOpen] = useState(false);
+  const [InvestmentAmount, setInvestmentAmount] = useState(null);
+  const TodaySharePrice = 0.00027;
+  const [InvestmentResult, setInvestmentResult] = useState(0)
+  const calcInvestment = () => {
+    setInvestmentResult( ((InvestmentAmount || 0)*1.32) )
+  }
 
   return (
     <>
@@ -135,20 +141,35 @@ function HeroHome() {
           {/* Section header */}
           <div className="mx-auto text-center">
             <h2 className="h3 mb-5 text-white">Check how much passive income you can earn by staking I-LIRA</h2>
-            <p className="text-xl text-gray-600 mb-5 mx-auto max-w-lg">Let’s check  today’s  share  price  to see how much you will earn if you stake  today</p>
+            <p className="text-xl text-gray-600 mb-5 mx-auto max-w-3xl">Let’s check  today’s  share  price  to see how much you will earn if you stake  today</p>
           </div>
 
           <div>
-            <div className="relative p-6 bg-white rounded shadow-xl">
+            <div className="relative p-10 bg-white rounded shadow-xl">
+              <div className='lg:flex lg:justify-between'>
+              <div className='w-full m-2 '>
+                <p className='text-gray-600 text-sm pl-1'>Enter Your Investment Amount:</p>
+                <input className=' w-full border border-indigo-100' type='number' placeholder='Amount (USD)' value={InvestmentAmount} onChange={(e)=>{setInvestmentAmount(e.target.value)}}/>
+              </div>
+
+              <div className='w-full m-2 '>
+              <p className='text-gray-600 text-sm pl-1'>Today's Raw-Share Price:</p>
+              <input className='w-full border border-indigo-100 bg-gray-200' type='number' disabled value={TodaySharePrice} placeholder="Today's Raw-Share Price"/>
+              </div>
               
-              <input className='w-full m-2 border border-indigo-100 border-b-indigo-500' type='number' placeholder='Enter Your Investment Amount'/>
-              <input className='w-full m-2 border border-indigo-100 border-b-indigo-500' type='number' placeholder={"Today's Raw-Share Price"}/>
               <div>
-                  <a className="mt-5 btn rounded-full text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 sm:w-auto sm:mb-0" href="#0"> Calculate <svg className="w-3 h-3 fill-current text-white flex-shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fillRule="nonzero" />
-                  </svg> 
-                  </a>
-                </div>
+                <button onClick={()=>{ calcInvestment() }} className="mt-6 btn rounded-full text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 sm:w-auto sm:mb-0" > Calculate <svg className="w-3 h-3 fill-current text-white flex-shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fillRule="nonzero" />
+                </svg> 
+                </button>
+              </div>
+              </div>
+              <div className='pt-10'>
+              <p className='text-blue-600 text-sm font-bold'>ESTIMATED 12 month stake REVENUE:</p>
+              <h1 className="h2 mb-2">{(+parseFloat(InvestmentResult/TodaySharePrice).toFixed(2)).toLocaleString('en-US')} I-LIRA <span className='text-blue-600'>(${(+parseFloat(InvestmentResult).toFixed(2)).toLocaleString('en-US')})</span></h1>
+              <p className='text-gray-600 text-sm'>Revenue will change based on ammount of stakes and I-LIRA price.</p>
+              </div>
+              
             </div>
 
            
