@@ -26,9 +26,6 @@ function Footer() {
                 </svg>
               </Link>
             </div>
-            <div className="text-sm text-gray-600">
-              <Link to="#" className="text-gray-600 hover:text-gray-900 hover:underline transition duration-150 ease-in-out">Terms</Link> · <Link to="#" className="text-gray-600 hover:text-gray-900 hover:underline transition duration-150 ease-in-out">Privacy Policy</Link>
-            </div>
           </div>
 
           {/* 2nd block */}
@@ -52,10 +49,10 @@ function Footer() {
             <h6 className="text-gray-800 font-medium mb-2">Resources</h6>
             <ul className="text-sm">
               <li className="mb-2">
-                <Link to="#" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Documentation</Link>
+                <a href="https://i-lira.notion.site/I-LIRA-COIN-E-LIRA-NFT-ec3b2bd98f8e46279c06784c3c3962ff" target="_blank" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Documentation</a>
               </li>
               <li className="mb-2">
-                <Link to="#" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Tutorials &amp; Guides</Link>
+                <a href="https://i-lira.notion.site/I-LIRA-Wiki-09ae641e4f9247769c731127cf37fbad" target="_blank" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Tutorials &amp; Guides</a>
               </li>
               <li className="mb-2">
                 <Link to="#" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Support Center</Link>
@@ -74,7 +71,7 @@ function Footer() {
                 <Link to="#" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">About us</Link>
               </li>
               <li className="mb-2">
-                <Link to="#" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Privacy Policy</Link>
+                <a href="https://i-lira.notion.site/Disclaimer-7583fd208b7c4762a2503c9e57f91bb6" target="_blank" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Privacy Policy</a>
               </li>
             </ul>
           </div>

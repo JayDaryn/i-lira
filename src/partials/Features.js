@@ -128,7 +128,14 @@ function Features() {
           </h1>
           
           <img className="mx-auto" src={require('../images/timeline.png').default} width='100%' alt="Hero" />
+          <div className='flex justify-center'>
+          <a href="https://i-lira.notion.site/I-LIRA-COIN-E-LIRA-NFT-ec3b2bd98f8e46279c06784c3c3962ff" target="_blank" rel="noopener noreferrer" className="m-3 btn rounded-full text-white bg-blue-600 hover:bg-blue-700" > WhitePaper <svg className="w-3 h-3 fill-current text-white flex-shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fillRule="nonzero" />
+                  </svg> 
+           </a>
         </div>
+        </div>
+        
     </div>
     </section>
   );
