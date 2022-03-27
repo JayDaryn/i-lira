@@ -28,3 +28,5 @@ Get free BNB for Testnet [here](https://testnet.binance.org/faucet-smart)
 ```
 truffle migrate --network bsc
 ```
+
+## Deploy Client To Production
