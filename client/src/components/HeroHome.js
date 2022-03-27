@@ -170,9 +170,17 @@ function HeroHome() {
               </div>
               </div>
               <div className='pt-10'>
-              <p className='text-blue-600 text-sm font-bold'>ESTIMATED 12 month stake REVENUE:</p>
-              <h1 className="h2 mb-2">{(+parseFloat(InvestmentResult/TodaySharePrice).toFixed(2)).toLocaleString('en-US')} I-LIRA <span className='text-blue-600'>(${(+parseFloat(InvestmentResult).toFixed(2)).toLocaleString('en-US')})</span></h1>
-              <p className='text-gray-600 text-sm'>Revenue will change based on ammount of stakes and I-LIRA price.</p>
+                <div className='lg:flex lg:justify-between'>
+                  <div>
+                    <p className='text-blue-600 text-sm font-bold'>TODAY:</p>
+                    <h1 className="h2 mb-2">{(+parseFloat((InvestmentAmount || 0)*TodaySharePrice))} I-LIRA <span className='text-blue-600'>(${(+parseFloat((InvestmentAmount || 0)).toFixed(2)).toLocaleString('en-US')})</span></h1>
+                  </div>
+                  <div>
+                  <p className='text-blue-600 text-sm font-bold'>ESTIMATED 12 month stake REVENUE:</p>
+                    <h1 className="h2 mb-2">{(+parseFloat(InvestmentResult/TodaySharePrice).toFixed(2)).toLocaleString('en-US')} I-LIRA <span className='text-blue-600'>(${(+parseFloat(InvestmentResult).toFixed(2)).toLocaleString('en-US')})</span></h1>
+                  </div>
+                </div>
+                <p className='text-gray-600 text-sm'>Revenue will change based on ammount of stakes and I-LIRA price.</p>
               </div>
               
             </div>
