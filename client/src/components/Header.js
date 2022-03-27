@@ -1,7 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { GlobalState } from '../GlobalState';
 
 function Header() {
+  const {
+    authenticate
+  } = useContext(GlobalState)
 
   const [top, setTop] = useState(true);
 
@@ -34,10 +38,10 @@ function Header() {
                 <Link to="/signin" className="font-medium text-gray-500 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out">Whitepaper</Link>
               </li> */}
               <li>
-                <Link to="/signup" className="btn-sm text-white bg-gray-900 hover:bg-gray-800 ml-3">
+                <button onClick={authenticate}  className="btn-sm text-white bg-gray-900 hover:bg-gray-800 ml-3">
                   <span>Connect Wallet</span>
                                    
-                </Link>
+                </button>
               </li>
             </ul>
 

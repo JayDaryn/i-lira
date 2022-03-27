@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { GlobalState } from '../GlobalState';
 import { Link } from 'react-router-dom';
 import Modal from '../utils/Modal';
 
 function HeroHome() {
+
+  const {
+    authenticate
+  } = useContext(GlobalState)
 
   const [videoModalOpen, setVideoModalOpen] = useState(false);
   const [InvestmentAmount, setInvestmentAmount] = useState(null);
@@ -44,16 +49,16 @@ function HeroHome() {
               
               <div className=" max-w-xs mx-auto sm:max-w-none sm:flex sm:flex-wrap" data-aos="zoom-y-out" data-aos-delay="300">
                 <div>
-                  <Link to="/signup" className="mt-5 btn rounded-full text-white bg-blue-600 hover:bg-blue-700 w-full sm:w-auto sm:mb-0" href="#0"> STAKE <svg className="w-3 h-3 fill-current text-white flex-shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                  <button onClick={authenticate} className="mt-5 btn rounded-full text-white bg-blue-600 hover:bg-blue-700 w-full sm:w-auto sm:mb-0" href="#0"> STAKE <svg className="w-3 h-3 fill-current text-white flex-shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
                     <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fillRule="nonzero" />
                   </svg> 
-                  </Link>
+                  </button>
                 </div>
                 <div>
-                  <Link to="/signup" className="mt-5 btn rounded-full text-white bg-gray-900 hover:bg-gray-800 w-full sm:w-auto sm:ml-4" href="#0">BUY <svg className="w-3 h-3 fill-current text-white flex-shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                  <button onClick={authenticate} className="mt-5 btn rounded-full text-white bg-gray-900 hover:bg-gray-800 w-full sm:w-auto sm:ml-4" href="#0">BUY <svg className="w-3 h-3 fill-current text-white flex-shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
                     <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fillRule="nonzero" />
                   </svg> 
-                  </Link>
+                  </button>
                 </div>
                 <div>
                   

@@ -1,11 +1,11 @@
 import React from 'react';
 
-import Header from '../partials/Header';
-import HeroHome from '../partials/HeroHome';
-import Features from '../partials/Features';
-import ELIRA from '../partials/ELIRA';
-import Newsletter from '../partials/Newsletter';
-import Footer from '../partials/Footer';
+import Header from '../components/Header';
+import HeroHome from '../components/HeroHome';
+import Features from '../components/Features';
+import ELIRA from '../components/ELIRA';
+import Newsletter from '../components/Newsletter';
+import Footer from '../components/Footer';
 
 function Home() {
   return (

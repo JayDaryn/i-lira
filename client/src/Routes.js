@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
+import { GlobalState } from './GlobalState';
 import {
   Switch,
   Route,
@@ -10,14 +11,15 @@ import './css/style.scss';
 import AOS from 'aos';
 import { focusHandling } from 'cruip-js-toolkit';
 
-import Home from './pages/Home';
-import SignIn from './pages/SignIn';
-import SignUp from './pages/SignUp';
-import ResetPassword from './pages/ResetPassword';
+import Home from './pages/Home'
+import Dashboard from './pages/Dasboard'
 
-function App() {
+function Routes() {
 
   const location = useLocation();
+  const {
+    user
+  } = useContext(GlobalState)
 
   useEffect(() => {
     AOS.init({
@@ -38,21 +40,26 @@ function App() {
   return (
     <>
       <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/signin">
-          <SignIn />
-        </Route>
-        <Route path="/signup">
-          <SignUp />
-        </Route>
-        <Route path="/reset-password">
-          <ResetPassword />
-        </Route>
+        {user === null
+          ? (
+            <>
+              <Route exact path="/">
+                <Home />
+              </Route>
+            </>
+          )
+          : (
+            <>
+              <Route path="/">
+                <Dashboard />
+              </Route>
+            </>
+          )
+        }
+        
       </Switch>
     </>
   );
 }
 
-export default App;
+export default Routes;
