@@ -1,31 +1,91 @@
-import React, {useEffect, createContext} from 'react'
-import useLocalStorage from './utils/useLocalStrorage'
-import axios from 'axios'
-const baseurl = "https://api.com"
+import React, {useEffect, createContext, useState} from 'react'
+// import useLocalStorage from './utils/useLocalStrorage'
 
+import Web3 from "web3";
+import Web3Modal from "web3modal";
+import WalletConnectProvider from "@walletconnect/web3-provider";
+import Authereum from "authereum";
+import SimpleStorageContract from "./contracts/SimpleStorage.json";
+
+import axios from 'axios'
+const baseurl = ''
+
+const web3Modal = new Web3Modal({
+  providerOptions:{
+    binancechainwallet: {
+      package: true
+    },
+    walletconnect: {
+      package: WalletConnectProvider,
+      options: {
+        infuraId: "80547483608c4225a6b35e2a7fb2ddca"
+      }
+    },
+    authereum: {
+      package: Authereum
+    }
+  }
+});
 
 const initialState = {
 	httpLoading: false,
-	user: null,
-	token: null
+  restoringSession: false,
+	web3: null,
+	account: null,
+  contract: null
 }
 
 export const GlobalState = createContext(initialState)
 
 export const GlobalStateWrapper = props => {
-  // const [state, setState] = useState(initialState)
-  const [state, setState] = useLocalStorage("session", initialState);
+  const [state, setState] = useState(initialState)
+  // const [session, setSession] = useLocalStorage("session", {});
 
   useEffect(() => {
     (async () => {
       // Load Session here
+      setState(prevState => ({...prevState, restoringSession:true }))
+      let web3 = null
+      if (window.ethereum) {
+          web3 = new Web3(window.ethereum);
+      } else if (window.web3) {
+          web3 = new Web3(window.web3.currentProvider);
+      }
+
+      if(web3) {
+        const accounts = await web3.eth.getAccounts();
+        const networkId = await web3.eth.net.getId();
+        const deployedNetwork = SimpleStorageContract.networks[networkId];
+        const contract = new web3.eth.Contract(
+          SimpleStorageContract.abi,
+          deployedNetwork && deployedNetwork.address,
+        );
+        setState(prevState => ({...prevState, web3, account:accounts[0], contract, restoringSession:false }))
+      } else {
+        setState(prevState => ({...prevState, restoringSession:false }))
+      }
     })()
   }, [])
 
   const actions = {
-    authenticate: async () => {
-      // auth
-      setState(prevState => ({...prevState, user:{name:'JC',email:'jeanclaude@jaydaryn.com'}}))
+    connectWallet: async () => {
+      try {
+        const provider = await web3Modal.connect();
+        const web3 = new Web3(provider);
+        const accounts = await web3.eth.getAccounts();
+        const networkId = await web3.eth.net.getId();
+        const deployedNetwork = SimpleStorageContract.networks[networkId];
+        const contract = new web3.eth.Contract(
+          SimpleStorageContract.abi,
+          deployedNetwork && deployedNetwork.address,
+        );
+        setState(prevState => ({...prevState, web3, account:accounts[0], contract}))
+      } catch (error) {
+        if(error.message){
+          window.alert(error.message)
+        }
+      }
+      
     },
     signOut: async () => {
 			setState(initialState)

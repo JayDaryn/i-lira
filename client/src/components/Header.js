@@ -4,7 +4,7 @@ import { GlobalState } from '../GlobalState';
 
 function Header() {
   const {
-    authenticate
+    connectWallet
   } = useContext(GlobalState)
 
   const [top, setTop] = useState(true);
@@ -38,7 +38,7 @@ function Header() {
                 <Link to="/signin" className="font-medium text-gray-500 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out">Whitepaper</Link>
               </li> */}
               <li>
-                <button onClick={authenticate}  className="btn-sm text-white bg-gray-900 hover:bg-gray-800 ml-3">
+                <button onClick={connectWallet}  className="btn-sm text-white bg-gray-900 hover:bg-gray-800 ml-3">
                   <span>Connect Wallet</span>
                                    
                 </button>

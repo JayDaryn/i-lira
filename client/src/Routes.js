@@ -1,10 +1,7 @@
 import React, { useEffect, useContext } from 'react';
 import { GlobalState } from './GlobalState';
-import {
-  Switch,
-  Route,
-  useLocation
-} from 'react-router-dom';
+import { Switch, Route, useLocation } from 'react-router-dom';
+import Loading from 'react-fullscreen-loading';
 
 import './css/style.scss';
 
@@ -18,7 +15,8 @@ function Routes() {
 
   const location = useLocation();
   const {
-    user
+    account,
+    restoringSession
   } = useContext(GlobalState)
 
   useEffect(() => {
@@ -39,8 +37,9 @@ function Routes() {
 
   return (
     <>
+    <Loading loading={restoringSession} background="#0D0D2B" loaderColor="#3498db" />
       <Switch>
-        {user === null
+        {!account
           ? (
             <>
               <Route exact path="/">
