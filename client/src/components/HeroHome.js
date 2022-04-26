@@ -38,7 +38,7 @@ function HeroHome() {
       <div className="pt-32 lg:flex lg:justify-between">
           <div className="px-5 lg:px-28 pt-10 flex-1" >
             <h1 className="text-5xl font-extrabold leading-tighter tracking-tighter text-white" data-aos="zoom-y-out">
-              I-LIRA STAKES 
+              I-LIRA STAKES
               
             </h1>
             <h1 className="text-5xl font-extrabold leading-tighter tracking-tighter mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400" data-aos="zoom-y-out" data-aos-delay="50">40% APY</h1>
